@@ -13,8 +13,8 @@ module Refinery
       belongs_to :location
       belongs_to :category
 
-      accepts_nested_attributes_for :location, :reject_if => lambda { |a| a[:new_location].blank? }, :allow_destroy => true
-      accepts_nested_attributes_for :category, :reject_if => lambda { |a| a[:new_category].blank? }, :allow_destroy => true
+      accepts_nested_attributes_for :location, :reject_if => lambda { |a| a[:new_location].blank? }, allow_destroy: true
+      accepts_nested_attributes_for :category, :reject_if => lambda { |a| a[:new_category].blank? }, allow_destroy: true
 
       before_validation :new_location_and_category
 
