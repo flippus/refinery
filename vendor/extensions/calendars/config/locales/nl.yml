@@ -1,0 +1,86 @@
+nl:
+  refinery:
+    plugins:
+      categories:
+        title: Categories
+      locations:
+        title: Locations
+      calendars:
+        title: Calendars
+    categories:
+      admin:
+        categories:
+          actions:
+            create_new: Nieuwe Category toevoegen
+            reorder: De volgorde van de Categories wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Category-volgorde
+          records:
+            title: Categories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Categories. Druk op 'Nieuwe Category toevoegen'
+              om de eerste toe te voegen.
+          category:
+            view_live_html: Deze category op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze category
+            delete: Deze category definitief verwijderen
+      categories:
+        show:
+          other: Andere Categories
+    locations:
+      admin:
+        locations:
+          actions:
+            create_new: Nieuwe Location toevoegen
+            reorder: De volgorde van de Locations wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Location-volgorde
+          records:
+            title: Locations
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Locations. Druk op 'Nieuwe Location toevoegen'
+              om de eerste toe te voegen.
+          location:
+            view_live_html: Deze location op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze location
+            delete: Deze location definitief verwijderen
+      locations:
+        show:
+          other: Andere Locations
+    calendars:
+      admin:
+        calendars:
+          actions:
+            create_new: Nieuwe Calendar toevoegen
+            reorder: De volgorde van de Calendars wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Calendar-volgorde
+          records:
+            title: Calendars
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Calendars. Druk op 'Nieuwe Calendar toevoegen'
+              om de eerste toe te voegen.
+          calendar:
+            view_live_html: Deze calendar op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze calendar
+            delete: Deze calendar definitief verwijderen
+      calendars:
+        show:
+          other: Andere Calendars
+  activerecord:
+    attributes:
+      refinery/categories/category:
+        name: Name
+      refinery/locations/location:
+        name: Name
+      refinery/calendars/calendar:
+        name: Name
+        room: Room
+        date: Date
+        host_name: Host Name
+        host_email: Host Email
+        contact_email: Contact Email
+        comment: Comment
+        admission: Admission
+        link: Link
+        published: Published

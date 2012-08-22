@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="calendars">
+    <% @calendars.each do |calendar| %>
+      <li>
+        <%= link_to calendar.name, refinery.calendars_calendar_path(calendar) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

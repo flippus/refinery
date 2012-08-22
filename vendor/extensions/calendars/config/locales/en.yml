@@ -1,0 +1,83 @@
+en:
+  refinery:
+    plugins:
+      categories:
+        title: Categories
+      locations:
+        title: Locations
+      calendars:
+        title: Calendars
+    categories:
+      admin:
+        categories:
+          actions:
+            create_new: Add New Category
+            reorder: Reorder Categories
+            reorder_done: Done Reordering Categories
+          records:
+            title: Categories
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Categories yet. Click "Add New Category" to
+              add your first category.
+          category:
+            view_live_html: View this category live <br/><em>(opens in a new window)</em>
+            edit: Edit this category
+            delete: Remove this category forever
+      categories:
+        show:
+          other: Other Categories
+    locations:
+      admin:
+        locations:
+          actions:
+            create_new: Add New Location
+            reorder: Reorder Locations
+            reorder_done: Done Reordering Locations
+          records:
+            title: Locations
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Locations yet. Click "Add New Location" to
+              add your first location.
+          location:
+            view_live_html: View this location live <br/><em>(opens in a new window)</em>
+            edit: Edit this location
+            delete: Remove this location forever
+      locations:
+        show:
+          other: Other Locations
+    calendars:
+      admin:
+        calendars:
+          actions:
+            create_new: Add New Calendar
+            reorder: Reorder Calendars
+            reorder_done: Done Reordering Calendars
+          records:
+            title: Calendars
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Calendars yet. Click "Add New Calendar" to
+              add your first calendar.
+          calendar:
+            view_live_html: View this calendar live <br/><em>(opens in a new window)</em>
+            edit: Edit this calendar
+            delete: Remove this calendar forever
+      calendars:
+        show:
+          other: Other Calendars
+  activerecord:
+    attributes:
+      refinery/categories/category:
+        name: Name
+      refinery/locations/location:
+        name: Name
+      refinery/calendars/calendar:
+        name: Name
+        room: Room
+        date: Date
+        host_name: Host Name
+        host_email: Host Email
+        contact_email: Contact Email
+        comment: Comment
+        admission: Admission
+        link: Link
+        published: Published

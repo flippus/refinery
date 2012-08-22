@@ -1,0 +1,83 @@
+cs:
+  refinery:
+    plugins:
+      categories:
+        title: Categories
+      locations:
+        title: Locations
+      calendars:
+        title: Calendars
+    categories:
+      admin:
+        categories:
+          actions:
+            create_new: Přidat Category
+            reorder: Řadit Categories
+            reorder_done: Konec řazení Categories
+          records:
+            title: Categories
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Categories. Zvolte "Přidat
+              Category" pro přidání prvního category.
+          category:
+            view_live_html: Zobrazit náhled category<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit category
+            delete: Smazat category
+      categories:
+        show:
+          other: Další Categories
+    locations:
+      admin:
+        locations:
+          actions:
+            create_new: Přidat Location
+            reorder: Řadit Locations
+            reorder_done: Konec řazení Locations
+          records:
+            title: Locations
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Locations. Zvolte "Přidat Location"
+              pro přidání prvního location.
+          location:
+            view_live_html: Zobrazit náhled location<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit location
+            delete: Smazat location
+      locations:
+        show:
+          other: Další Locations
+    calendars:
+      admin:
+        calendars:
+          actions:
+            create_new: Přidat Calendar
+            reorder: Řadit Calendars
+            reorder_done: Konec řazení Calendars
+          records:
+            title: Calendars
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Calendars. Zvolte "Přidat Calendar"
+              pro přidání prvního calendar.
+          calendar:
+            view_live_html: Zobrazit náhled calendar<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit calendar
+            delete: Smazat calendar
+      calendars:
+        show:
+          other: Další Calendars
+  activerecord:
+    attributes:
+      refinery/categories/category:
+        name: Name
+      refinery/locations/location:
+        name: Name
+      refinery/calendars/calendar:
+        name: Name
+        room: Room
+        date: Date
+        host_name: Host Name
+        host_email: Host Email
+        contact_email: Contact Email
+        comment: Comment
+        admission: Admission
+        link: Link
+        published: Published
