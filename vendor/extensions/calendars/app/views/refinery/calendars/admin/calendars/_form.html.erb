@@ -9,6 +9,26 @@
   </div>
 
   <div class='field'>
+    <%= f.label :location_id -%>
+    <%= f.collection_select(:location_id, Location.all, :id, :name, {include_blank: true}) -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :new_location_id -%>
+    <%= f.text_field :new_location_id -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :category_id -%>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: true}) -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :new_category_id -%>
+    <%= f.text_field :new_category_id -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :room -%>
     <%= f.text_field :room -%>
   </div>
