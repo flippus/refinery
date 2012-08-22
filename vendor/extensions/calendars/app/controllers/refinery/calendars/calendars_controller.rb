@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_calendars
-        @calendars = Calendar.order('position ASC')
+        @calendars = Calendar.where("date >= ?", Time.now).order("date ASC")
       end
 
       def find_page
