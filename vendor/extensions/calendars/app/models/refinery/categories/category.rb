@@ -7,6 +7,7 @@ module Refinery
 
       acts_as_indexed :fields => [:name]
 
+      #TODO: case_sensitive true
       validates :name, :presence => true, :uniqueness => true
     end
   end

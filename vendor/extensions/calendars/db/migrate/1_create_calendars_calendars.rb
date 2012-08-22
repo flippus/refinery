@@ -6,7 +6,6 @@ class CreateCalendarsCalendars < ActiveRecord::Migration
       t.string :room
       t.datetime :date
       t.string :host_name
-      t.string :host_name
       t.string :host_email
       t.string :contact_email
       t.text :comment
