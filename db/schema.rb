@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821233630) do
+ActiveRecord::Schema.define(:version => 20120822220617) do
 
   create_table "refinery_calendars", :force => true do |t|
     t.string   "name"
@@ -27,7 +27,12 @@ ActiveRecord::Schema.define(:version => 20120821233630) do
     t.integer  "position"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "location_id"
+    t.integer  "category_id"
   end
+
+  add_index "refinery_calendars", ["category_id"], :name => "index_refinery_calendars_on_category_id"
+  add_index "refinery_calendars", ["location_id"], :name => "index_refinery_calendars_on_location_id"
 
   create_table "refinery_categories", :force => true do |t|
     t.string   "name"

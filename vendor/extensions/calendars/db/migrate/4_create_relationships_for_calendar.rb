@@ -1,4 +1,4 @@
-class CreateCategoriesCategories < ActiveRecord::Migration
+class CreateRelationshipsForCalendar < ActiveRecord::Migration
 
   def up
     add_column :refinery_calendars, :location_id, :integer
