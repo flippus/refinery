@@ -8,10 +8,23 @@
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
 
-  <div class='field'>
-    <%= f.label :location -%>
-    <%= f.collection_select(:location, Refinery::Locations::Location.all, :id, :name) -%>
-    <%= new_location_admin_path %>
+  <%= f.hidden_field(:location_selection, :value => "0") %>
+
+  <div id='location_select'>
+    <div class='location_collection_select'>
+      <%= f.label :location -%>
+      <%= f.collection_select(:location, Refinery::Locations::Location.all, :id, :name, options ={:prompt => "Neue Location anlegen"}) -%>
+    </div>
+    <%= content_tag(:a, "Neue Location anlegen", {href: '#', id: "new_location", style: "display:none"}) -%>
+  </div>
+
+  <% #TODO: standardmäßig erstmal verbergen %>
+  <div id='new_location'>
+    <div class='field'>
+      <%= f.label :new_location -%>
+      <%= f.text_field :new_location -%>
+    </div>
+    <%= content_tag(:a, "Vorhandene Location auswählen", {href: '#', id: "location_select", style: "display:none"}) -%>
   </div>
 
   <div class='field'>
