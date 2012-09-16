@@ -4,7 +4,9 @@
 
 To create the engine and your first model you have to type in the following command:
 
-`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --namespace your_plugin_namespace_name'
+`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --namespace your_plugin_namespace_name`
+
+Then follow the instructions!
 
 Example:
 
@@ -12,28 +14,26 @@ I want to create a engine with the name `event' with the following attributes kn
 
 `rails generate refinery:engine event name:string room:string date:datetime
 host_name:string host_email:string contact_email:string comment:text
-admission:decimal link:string published:boolean --namespace calendar'
-
-Then follow the instructions!
+admission:decimal link:string published:boolean --namespace calendar`
 
 == create more models
 
 If you need some more models, you use the generate command some more times.
 But now you have to change the command a little bit, so that you have the following new command:
 
-`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --extension plural_name_of_your_first_model --namespace your_plugin_namespace_name'
+`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --extension plural_name_of_your_first_model --namespace your_plugin_namespace_name`
+
++ follow the instructions!
 
 Example:
 
 I want to create a location model for my events engine.
 
-`rails generate refinery:engine location name:string --extension events --namespace calendar
+`rails generate refinery:engine location name:string --extension events --namespace calendar`
 
-+ follow the instructions!
+Next model i want to create is the category model for my engine and you see, it's the same as the location model creation.
 
-`rails generate refinery:engine category name:string --extension events --namespace calendar'
-
-+ follow the instructions!
+`rails generate refinery:engine category name:string --extension events --namespace calendar`
 
 == revise your models/views
 
