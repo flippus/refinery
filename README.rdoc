@@ -1,8 +1,15 @@
 = Generate your first Refinery CMS Plugin
 
-== create your first model
+== create the engine and your first model
 
-You have to type in
+To create the engine and your first model you have to type in the following command:
+
+`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --namespace your_plugin_namespace_name'
+
+===Example:
+
+I want to create a engine with the name `event' with the following attributes known from rails and the namespace calendar.
+
 `rails generate refinery:engine event name:string room:string date:datetime
 host_name:string host_email:string contact_email:string comment:text
 admission:decimal link:string published:boolean --namespace calendar'
@@ -11,6 +18,23 @@ Then follow the instructions!
 
 == create more models
 
-`rails generate refinery:engine location name:string --extension events --namespace calendar'
+If you need some more models, you use the generate command some more times.
+But now you have to change the command a little bit, so that you have the following new command:
+
+`rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --extension plural_name_of_your_first_model --namespace your_plugin_namespace_name'
+
+===Example:
+
+I want to create a location model for my events engine.
+
+`rails generate refinery:engine location name:string --extension events --namespace calendar
+
++ follow the instructions!
 
 `rails generate refinery:engine category name:string --extension events --namespace calendar'
+
++ follow the instructions!
+
+== revise your models/views
+
+And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
