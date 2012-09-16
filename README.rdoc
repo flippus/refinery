@@ -6,7 +6,7 @@ To create the engine and your first model you have to type in the following comm
 
 `rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --namespace your_plugin_namespace_name'
 
-===Example:
+Example:
 
 I want to create a engine with the name `event' with the following attributes known from rails and the namespace calendar.
 
@@ -23,7 +23,7 @@ But now you have to change the command a little bit, so that you have the follow
 
 `rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --extension plural_name_of_your_first_model --namespace your_plugin_namespace_name'
 
-===Example:
+Example:
 
 I want to create a location model for my events engine.
 
@@ -38,3 +38,12 @@ I want to create a location model for my events engine.
 == revise your models/views
 
 And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
+
+== create a gem from your plugin
+
+    $> cd vendor/extensions/events
+    $> gem build refinerycms-events.gemspec
+    $> gem install refinerycms-events.gem
+
+Sign up for a http://rubygems.org/ account and publish the gem
+    $> gem push refinerycms-events.gem
