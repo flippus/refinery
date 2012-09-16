@@ -45,7 +45,7 @@ If you want to add a js file for your app, you have to register the file in +ref
 
   $> config.register_javascript "your_app_name"
 
-The js file have to be located in +your_app_directory\app\assets\javascripts\+ and has to be named as +your_app_name.js+.
+The js file have to be located in +your_app_directory/app/assets/javascripts+ and has to be named as +your_app_name.js+.
 
 === Example:
 
