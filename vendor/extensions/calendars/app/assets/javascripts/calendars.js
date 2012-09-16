@@ -1,21 +1,13 @@
-function show_elements()
+function show_new_location()
 {
-    var elementNames = show_elements.arguments;
-    for (var i=0; i<elementNames.length; i++)
-    {
-        var elementName = elementNames[i];
-        document.getElementById(elementName).style.display='block';
-    }
-    //document.getElementById("location_selection").value = 'blabla';
+    document.getElementById('new_location').style.display='block';
+    document.getElementById('location_select').style.display='none';
+    document.getElementById("location_selection").value = 1;
 }
 
-function hide_elements()
+function show_location_select()
 {
-    var elementNames = hide_elements.arguments;
-    for (var i=0; i<elementNames.length; i++)
-    {
-        var elementName = elementNames[i];
-        document.getElementById(elementName).style.display='none';
-    }
-    //document.getElementById("location_selection").value = 'blabla';
+    document.getElementById('location_select').style.display='block';
+    document.getElementById('new_location').style.display='none';
+    document.getElementById("location_selection").value = 0;
 }
