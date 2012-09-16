@@ -1,6 +1,6 @@
-= Generate your first Refinery CMS Plugin
+# Generate your first Refinery CMS Plugin
 
-== create the engine and your first model
+## create the engine and your first model
 
 To create the engine and your first model you have to type in the following command:
 
@@ -8,13 +8,13 @@ To create the engine and your first model you have to type in the following comm
 
 Then follow the instructions!
 
-Example:
+### Example:
 
 I want to create a engine with the name `event' with the following attributes known from rails and the namespace calendar.
 
   $> rails generate refinery:engine event name:string room:string date:datetime host_name:string host_email:string contact_email:string comment:text admission:decimal link:string published:boolean --namespace calendar
 
-== create more models
+## create more models
 
 If you need some more models, you use the generate command some more times.
 But now you have to change the command a little bit, so that you have the following new command:
@@ -23,7 +23,7 @@ But now you have to change the command a little bit, so that you have the follow
 
 + follow the instructions!
 
-Example:
+### Example:
 
 I want to create a location model for my events engine.
 
@@ -35,11 +35,11 @@ Next model i want to create is the category model for my engine and you see, it'
 
 There is also a [official guide](http://refinerycms.com/guides/multiple-resources-in-an-extension) for this topic.
 
-== revise your models/views
+## revise your models/views
 
 And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
 
-== add a js file for backend
+## add a js file for backend
 
 If you want to add a js file for your app, you have to register the file in `refinery_directory\config\initializers\core.rb` with the following command:
 
@@ -47,7 +47,7 @@ If you want to add a js file for your app, you have to register the file in `ref
 
 The js file have to be located in `your_app_directory\app\assets\javascripts\` and has to be named as `your_app_name.js`.
 
-Example:
+### Example:
 
 In my case I have to use the following code:
 
@@ -56,11 +56,12 @@ In my case I have to use the following code:
 My js file is located in `events\app\assets\javascripts\` and it's name is `events.js`.
 
 
-== create a gem from your plugin
+## create a gem from your plugin
 
   $> cd vendor/extensions/events
   $> gem build refinerycms-events.gemspec
   $> gem install refinerycms-events.gem
 
 Sign up for a http://rubygems.org/ account and publish the gem
+
   $> gem push refinerycms-events.gem
