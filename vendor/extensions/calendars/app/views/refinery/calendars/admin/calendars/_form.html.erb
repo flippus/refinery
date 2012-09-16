@@ -3,27 +3,25 @@
               :object => @calendar,
               :include_object_name => true %>
 
-  <div class='field'>
+  <div class='field' xmlns="http://www.w3.org/1999/html">
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
 
   <%= f.hidden_field(:location_selection, :value => "0") %>
 
-  <div id='location_select'>
-    <div class='field'>
-      <%= f.label :location -%>
-      <%= f.collection_select(:location, Refinery::Locations::Location.all, :id, :name) -%>
-    </div>
-    <%= content_tag(:a, "Neue Location anlegen", {href: '#', id: "new_location"}) %>
+  <div class='field' id='location_select'>
+    <%= f.label :location -%>
+    <%= f.collection_select(:location, Refinery::Locations::Location.all, :id, :name) -%>
+    </br>
+    <a href="#" title="Klicke hier, falls deine Location nicht ausgewählt werden kann" onclick="show_elements('new_location');hide_elements('location_select')">Neue Location anlegen</a>
   </div>
 
-  <div id='new_location' style= "display:none">
-    <div class='field'>
-      <%= f.label :location -%>
-      <%= f.text_field :location %>
-    </div>
-    <%= content_tag(:a, "Vorhandene Location auswählen", {href: '#', id: "location_select"}) %>
+  <div id='new_location' style="display:none" class='field'>
+    <%= f.label :new_location -%>
+    <%= f.text_field :new_location %>
+    </br>
+    <a href="#" onclick="show_elements('new_location');hide_elements('location_select')">Location auswählen</a>
   </div>
 
   <div class='field'>

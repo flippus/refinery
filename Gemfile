@@ -25,7 +25,7 @@ end
 gem 'jquery-rails', '~> 2.0.0'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -37,7 +37,7 @@ gem 'jquery-rails', '~> 2.0.0'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 # Refinery CMS
 gem 'refinerycms', :git => 'git://github.com/simplelogica/refinerycms', :branch => 'fix/engine-generator-multiple-resources-migrations-routes'
