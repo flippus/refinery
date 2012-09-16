@@ -9,14 +9,5 @@
 # Added by Refinery CMS Pages extension
 Refinery::Pages::Engine.load_seed
 
-# Added by Refinery CMS Calendars extension
-Refinery::Calendars::Engine.load_seed
-
-# Added by Refinery CMS Locations extension
-Refinery::Locations::Engine.load_seed
-
-# Added by Refinery CMS Categories extension
-Refinery::Categories::Engine.load_seed
-
-# Added by Refinery CMS Categories extension
-Refinery::Categories::Engine.load_seed
+# Added by Refinery CMS Events extension
+Refinery::Calendar::Engine.load_seed

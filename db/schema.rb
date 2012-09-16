@@ -11,9 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822220617) do
+ActiveRecord::Schema.define(:version => 20120916203540) do
 
-  create_table "refinery_calendars", :force => true do |t|
+  create_table "refinery_calendar_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_calendar_events", :force => true do |t|
     t.string   "name"
     t.string   "room"
     t.datetime "date"
@@ -31,10 +38,10 @@ ActiveRecord::Schema.define(:version => 20120822220617) do
     t.integer  "category_id"
   end
 
-  add_index "refinery_calendars", ["category_id"], :name => "index_refinery_calendars_on_category_id"
-  add_index "refinery_calendars", ["location_id"], :name => "index_refinery_calendars_on_location_id"
+  add_index "refinery_calendar_events", ["category_id"], :name => "index_refinery_calendar_events_on_category_id"
+  add_index "refinery_calendar_events", ["location_id"], :name => "index_refinery_calendar_events_on_location_id"
 
-  create_table "refinery_categories", :force => true do |t|
+  create_table "refinery_calendar_locations", :force => true do |t|
     t.string   "name"
     t.integer  "position"
     t.datetime "created_at", :null => false
@@ -50,13 +57,6 @@ ActiveRecord::Schema.define(:version => 20120822220617) do
     t.string   "image_uid"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-  end
-
-  create_table "refinery_locations", :force => true do |t|
-    t.string   "name"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

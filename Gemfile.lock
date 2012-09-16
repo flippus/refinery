@@ -59,7 +59,7 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
-    refinerycms-calendars (1.0)
+    refinerycms-events (1.0)
       acts_as_indexed (~> 0.7)
       refinerycms-core (~> 2.1.0.dev)
 
@@ -213,7 +213,7 @@ DEPENDENCIES
   jquery-rails (~> 2.0.0)
   rails (= 3.2.8)
   refinerycms!
-  refinerycms-calendars!
+  refinerycms-events!
   refinerycms-i18n (~> 2.1.0.dev)!
   sass-rails (~> 3.2.3)
   sqlite3
