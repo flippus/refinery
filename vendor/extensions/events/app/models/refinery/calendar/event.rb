@@ -18,14 +18,13 @@ module Refinery
       private
 
       def check_location_selection
-        MyLog.debug "location_selection #{location_selection}, #{location_selection.to_i}"
-        return if location_selection == 0
+        return if location_selection == "0"
 
         if !new_location.blank?
-          created_location = Refinery::Locations::Location.create!(name: new_location)
+          created_location = Refinery::Calendar::Location.create!(name: new_location)
           self.location = created_location.id
         else
-          errors.add(:new_location, "cant be blank")
+          errors.add(:new_location, "can't be blank")
         end
       end
 
