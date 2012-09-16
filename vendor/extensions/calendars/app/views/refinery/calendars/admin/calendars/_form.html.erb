@@ -8,20 +8,20 @@
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
 
-  <%= f.hidden_field(:location_selection, :value => "0") %>
+  <%= f.hidden_field(:location_selection, :value => 0) %>
 
   <div class='field' id='location_select'>
     <%= f.label :location -%>
     <%= f.collection_select(:location, Refinery::Locations::Location.all, :id, :name) -%>
     </br>
-    <a href="#" title="Klicke hier, falls deine Location nicht ausgewählt werden kann" onclick="show_elements('new_location');hide_elements('location_select')">Neue Location anlegen</a>
+    <a href="#" title="Klicke hier, falls deine Location nicht vorhanden ist" onclick="show_new_location()">Neue Location anlegen</a>
   </div>
 
   <div id='new_location' style="display:none" class='field'>
     <%= f.label :new_location -%>
     <%= f.text_field :new_location %>
     </br>
-    <a href="#" onclick="show_elements('new_location');hide_elements('location_select')">Location auswählen</a>
+    <a href="#" onclick="show_location_select()">Location auswählen</a>
   </div>
 
   <div class='field'>
