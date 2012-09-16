@@ -33,9 +33,28 @@ Next model i want to create is the category model for my engine and you see, it'
 
   $> rails generate refinery:engine category name:string --extension events --namespace calendar
 
+There is also a [official guide](http://refinerycms.com/guides/multiple-resources-in-an-extension) for this topic.
+
 == revise your models/views
 
 And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
+
+== add a js file for backend
+
+If you want to add a js file for your app, you have to register the file in `refinery_directory\config\initializers\core.rb` with the following command:
+
+  $> config.register_javascript "your_app_name"
+
+The js file have to be located in `your_app_directory\app\assets\javascripts\` and has to be named as `your_app_name.js`.
+
+Example:
+
+In my case I have to use the following code:
+
+  $> config.register_javascript "events"
+
+My js file is located in `events\app\assets\javascripts\` and it's name is `events.js`.
+
 
 == create a gem from your plugin
 
