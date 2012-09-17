@@ -12,7 +12,7 @@ If you want to create a model without frontend, then add +--skip-frontend+.
 
 === Example:
 
-I want to create a engine with the name `event' with the following attributes known from rails and the namespace calendar.
+I want to create a engine with the name +event+ with the following attributes known from rails and the namespace calendar.
 
   $> rails generate refinery:engine event name:string room:string date:datetime host_name:string host_email:string contact_email:string comment:text admission:decimal link:string published:boolean --namespace calendar
 
