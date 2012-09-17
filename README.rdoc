@@ -8,6 +8,8 @@ To create the engine and your first model you have to type in the following comm
 
 Then follow the instructions!
 
+If you want to create a model without frontend, then add +--skip-frontend+.
+
 === Example:
 
 I want to create a engine with the name `event' with the following attributes known from rails and the namespace calendar.
