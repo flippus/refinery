@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :calendar do
-    resources :events, :only => [:index, :show]
+    resources :events, :only => [:index, :show, :new, :create]
   end
 
   # Admin routes
@@ -17,11 +17,6 @@ Refinery::Core::Engine.routes.append do
   end
 
 
-  # Frontend routes
-  namespace :calendar do
-    resources :locations, :only => [:index, :show]
-  end
-
   # Admin routes
   namespace :calendar, :path => '' do
     namespace :admin, :path => 'refinery/calendar' do
@@ -33,11 +28,6 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
-
-  # Frontend routes
-  namespace :calendar do
-    resources :categories, :only => [:index, :show]
-  end
 
   # Admin routes
   namespace :calendar, :path => '' do
