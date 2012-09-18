@@ -22,10 +22,6 @@ def down
     ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-calendar"})
   end
 
-  if defined?(::Refinery::Page)
-    ::Refinery::Page.delete_all({:link_url => "/calendar/locations"})
-  end
-
   drop_table :refinery_calendar_locations
 
   remove_column :refinery_calendar_events, :location_id

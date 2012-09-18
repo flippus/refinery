@@ -21,10 +21,6 @@ class CreateCalendarCategories < ActiveRecord::Migration
       ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-calendar"})
     end
 
-    if defined?(::Refinery::Page)
-      ::Refinery::Page.delete_all({:link_url => "/calendar/categories"})
-    end
-
     drop_table :refinery_calendar_categories
 
     remove_column :refinery_calendar_events, :category_id
