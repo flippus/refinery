@@ -5,6 +5,15 @@
 <% content_for :body do %>
 
   <section>
+    <h1>Date</h1>
+    <p>
+
+      <%=raw @event.date %>
+
+    </p>
+  </section>
+
+  <section>
     <h1>Name</h1>
     <p>
 
@@ -23,28 +32,10 @@
   </section>
 
   <section>
-    <h1>Date</h1>
-    <p>
-
-      <%=raw @event.date %>
-
-    </p>
-  </section>
-
-  <section>
     <h1>Host Name</h1>
     <p>
 
       <%=raw @event.host_name %>
-
-    </p>
-  </section>
-
-  <section>
-    <h1>Host Email</h1>
-    <p>
-
-      <%=raw @event.host_email %>
 
     </p>
   </section>
@@ -81,15 +72,6 @@
     <p>
 
       <%=raw @event.link %>
-
-    </p>
-  </section>
-
-  <section>
-    <h1>Published</h1>
-    <p>
-
-      <%=raw @event.published %>
 
     </p>
   </section>
