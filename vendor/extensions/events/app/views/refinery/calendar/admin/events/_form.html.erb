@@ -12,8 +12,8 @@
   <%= f.hidden_field(:location_selection, :value => 0) %>
 
   <div id='location_select' class='field'>
-    <%= f.label :location -%>
-    <%= f.collection_select(:location, Refinery::Calendar::Location.all, :id, :name) -%>
+    <%= f.label :location_id -%>
+    <%= f.collection_select(:location_id, Refinery::Calendar::Location.all, :id, :name) -%>
     </br>
     <a href="#" title="Klicke hier, falls deine Location nicht vorhanden ist" onclick="show_new_location()">Neue Location anlegen</a>
   </div>
@@ -26,8 +26,8 @@
   </div>
 
   <div class='field'>
-    <%= f.label :category -%>
-    <%= f.collection_select(:category, Refinery::Calendar::Category.all, :id, :name) -%>
+    <%= f.label :category_id -%>
+    <%= f.collection_select(:category_id, Refinery::Calendar::Category.all, :id, :name) -%>
   </div>
 
   <div class='field'>
