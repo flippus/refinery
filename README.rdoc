@@ -41,6 +41,42 @@ There is also a {official guide}[http://refinerycms.com/guides/multiple-resource
 
 And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
 
+But pay attention to the refinery way, not the rails way.
+
+I give you a example:
+
+We have a event model and a location model.
+A location can have many events, but a event belongs to a location.
+Now you see the differences between rails and refinery code:
+
+=== Rails
+
+event.rb:
+[code lang="ruby"]
+  belongs_to :location
+[/code]
+
+location.rb:
+[code lang="ruby"]
+  has_many :events, dependent: :restrict
+[/code]
+
+=== Refinery
+
+event.rb:
+[code lang="ruby"]
+  belongs_to :location, :class_name => '::Refinery::Calendar::Location'
+[/code]
+
+location.rb:
+[code lang="ruby"]
+  has_many :events, :class_name => 'Refinery::Calendar::Event', dependent: :restrict
+[/code]
+
+
+As you can see, you have to use always the refinery model!!
+
+
 == Add a js file for backend
 
 If you want to add a js file for your app, you have to register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
