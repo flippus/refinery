@@ -25,7 +25,7 @@ module Refinery
 
         if !new_location.blank?
           created_location = Refinery::Calendar::Location.create!(name: new_location)
-          self.location = created_location.id
+          self.location_id = created_location.id
         else
           errors.add(:new_location, "can't be blank")
         end
