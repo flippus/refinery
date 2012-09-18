@@ -73,7 +73,7 @@ As you can see, you have to use always the refinery model!!
 
 If you want to add a js file for your app, you have to register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
 
-  $> config.register_javascript "your_app_name"
+  config.register_javascript "your_app_name"
 
 The js file have to be located in +your_app_directory/app/assets/javascripts+ and has to be named as +your_app_name.js+.
 
@@ -81,7 +81,7 @@ The js file have to be located in +your_app_directory/app/assets/javascripts+ an
 
 In my case I have to use the following code:
 
-  $> config.register_javascript "events"
+  config.register_javascript "events"
 
 My js file is located in +events/app/assets/javascripts+ and it's name is +events.js+.
 
