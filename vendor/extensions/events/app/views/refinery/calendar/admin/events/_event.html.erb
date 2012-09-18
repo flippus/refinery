@@ -1,11 +1,13 @@
 
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(event) -%>">
   <span class='title'>
+    <%= event.date %>&nbsp;&nbsp;&nbsp;
+    <%= event.published %>&nbsp;&nbsp;&nbsp;
     <%= event.name %>
 
   </span>
   <span class='actions'>
-    
+
     <%= link_to refinery_icon_tag("application_go.png"), refinery.calendar_event_path(event),
         :title => t('.view_live_html'),
         :target => "_blank" %>
