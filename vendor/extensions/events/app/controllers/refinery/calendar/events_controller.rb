@@ -15,7 +15,7 @@ module Refinery
         begin
           @event = Event.published.find(params[:id])
         rescue ActiveRecord::RecordNotFound
-          #TODO: fehlermeldung für page nicht gefunden
+          flash[:error] = "Event konnte nicht gefunden werden"
           redirect_to refinery.calendar_events_path
         end
 
@@ -33,7 +33,7 @@ module Refinery
         @event.published = false
 
         if @event.save
-          #TODO: erfolgreich angelegt meldung
+          flash[:notice] = "Event wurde erfolgreich angelegt"
           redirect_to refinery.calendar_events_path
         else
           render :action => 'new'
