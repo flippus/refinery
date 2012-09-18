@@ -30,6 +30,7 @@ module Refinery
 
       def create
         @event = Event.new(params[:event])
+        @event.published = false
 
         if @event.save
           #TODO: erfolgreich angelegt meldung
