@@ -2,7 +2,7 @@ module Refinery
   module Calendar
     class EventsController < ::ApplicationController
 
-      before_filter :find_all_upcoming_events
+      before_filter :find_all_upcoming_and_published_events
       before_filter :find_page
 
       def index
@@ -19,9 +19,24 @@ module Refinery
         present(@page)
       end
 
-    protected
+      def new
+        @event = Event.new
+      end
 
-      def find_all_upcoming_events
+      def create
+        @event = Event.new(params[:event])
+
+        if @event.save
+          #TODO: erfolgreich angelegt meldung
+          redirect_to refinery.calendar_events_path
+        else
+          render :action => 'new'
+        end
+      end
+
+      protected
+
+      def find_all_upcoming_and_published_events
         @events = Event.published.where("date >= ?", Time.now).order("date ASC")
       end
 
