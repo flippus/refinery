@@ -2,7 +2,7 @@ module Refinery
   module Calendar
     class EventsController < ::ApplicationController
 
-      before_filter :find_all_events
+      before_filter :find_all_upcoming_events
       before_filter :find_page
 
       def index
@@ -21,8 +21,8 @@ module Refinery
 
     protected
 
-      def find_all_events
-        @events = Event.order('position ASC')
+      def find_all_upcoming_events
+        @events = Event.published.where("date >= ?", Time.now).order("date ASC")
       end
 
       def find_page

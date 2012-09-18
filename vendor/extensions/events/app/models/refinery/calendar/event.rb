@@ -14,6 +14,8 @@ module Refinery
       belongs_to :location, :class_name => '::Refinery::Calendar::Location'
       belongs_to :category, :class_name => '::Refinery::Calendar::Category'
 
+      scope :published, where(published: true)
+
       before_validation :check_location_selection
 
       private
