@@ -84,6 +84,7 @@
 <% end -%>
 
 <% content_for :javascripts do -%>
+  <%= javascript_include_tag 'events' %>
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');

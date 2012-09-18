@@ -1,4 +1,5 @@
 <% content_for :body do %>
+
   <div class='events'>
 
     <%= form_for [refinery, :calendar, @event] do |f| %>
@@ -80,4 +81,9 @@
     <% end %>
   </div>
 <% end %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'events' %>
+<% end %>
+
 <%= render '/refinery/content_page' %>
