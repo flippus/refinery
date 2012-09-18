@@ -5,7 +5,9 @@ module Refinery
 
         crudify :'refinery/calendar/event',
                 :title_attribute => 'name',
-                :xhr_paging => true
+                :xhr_paging => true,
+                :order => "date DESC",
+                :sortable => false
 
       end
     end
