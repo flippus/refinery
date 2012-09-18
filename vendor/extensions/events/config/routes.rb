@@ -16,6 +16,10 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+  # Frontend routes
+  namespace :calendar do
+    resources :locations, :only => [:index, :show]
+  end
 
   # Admin routes
   namespace :calendar, :path => '' do
@@ -28,6 +32,10 @@ Refinery::Core::Engine.routes.append do
     end
   end
 
+  # Frontend routes
+  namespace :calendar do
+    resources :category, :only => [:index, :show]
+  end
 
   # Admin routes
   namespace :calendar, :path => '' do
