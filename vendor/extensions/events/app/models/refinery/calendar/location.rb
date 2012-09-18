@@ -8,7 +8,7 @@ module Refinery
 
       validates :name, :presence => true, uniqueness: {case_sensitive: false}
 
-      has_many :events, dependent: :restrict
+      has_many :events, :class_name => 'Refinery::Calendar::Event', dependent: :restrict
 
     end
   end
