@@ -12,7 +12,12 @@ module Refinery
       end
 
       def show
-        @event = Event.find(params[:id])
+        begin
+          @event = Event.published.find(params[:id])
+        rescue ActiveRecord::RecordNotFound
+          #TODO: fehlermeldung für page nicht gefunden
+          redirect_to refinery.calendar_events_path
+        end
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @event in the line below:
