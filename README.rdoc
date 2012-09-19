@@ -69,9 +69,20 @@ location.rb:
 As you can see, you have to use always the refinery model!!
 
 
+== Use a own javascript file
+
+The easiest way to include a own javascript file to views is to add the following code to these views.
+You needn't to add js at the end of the file, this happens automatically.
+But the js file have to be located in +your_app_directory/app/assets/javascripts+.
+
+  <% content_for :javascripts do %>
+    <%= javascript_include_tag 'javascript_file_name' %>
+  <% end %>
+
+
 == Add a js file for backend
 
-If you want to add a js file for your app, you have to register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
+If you want to add a js file for only the backend of your app, you can also register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
 
   config.register_javascript "your_app_name"
 
@@ -85,6 +96,41 @@ In my case I have to use the following code:
 
 My js file is located in +events/app/assets/javascripts+ and it's name is +events.js+.
 
+== Form generator
+
+In addition to the engine generator there's also a form generator. So can create easy additional forms to your extension.
+To to use the form generator you need this command:
+
+  rails generate refinery:form form_name (attribute:attribut_type)*x --extension extension_name --namespace namespace_name
+
+If you want to see some information. just invoke +rails generate refinery:form+.
+
+=== generated form
+
+If you created your first form, you will maybe surprised, because the labels are +f.required_label+s and not +f.label+s.
+A +f.required_label+ means, that in front of the label a +*+ will be shown, so the visitor knows, he has to fill in the field.
+
+== controller update
+
+=== frontend controller
+
+If you want another order of your objects, you have to edit your frontend controller.
+
+There's a method +find_all_objects+, in my case +find_all_events+.
+
+  def find_all_events
+    @events = Event.order("date DESC")
+  end
+
+=== admin controller
+
+In your admin controller it's the same, but here you can disable the manuell sorting, too.
+
+This line determine the order type of the objects.
+  :order => "date DESC"
+
+This line determine, if you can manually change the position of a object.
+  :sortable => false
 
 == Create a gem from your plugin
 
