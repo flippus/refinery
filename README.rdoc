@@ -82,7 +82,7 @@ But the js file have to be located in +your_app_directory/app/assets/javascripts
 
 == Add a js file for backend
 
-If you want to add a js file for only the backend of your app, you can also register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
+If you want to add a js file only for the backend of your app, you can also register the file in +refinery_directory/config/initializers/core.rb+ with the following command:
 
   config.register_javascript "your_app_name"
 
@@ -99,16 +99,17 @@ My js file is located in +events/app/assets/javascripts+ and it's name is +event
 == Form generator
 
 In addition to the engine generator there's also a form generator. So can create easy additional forms to your extension.
-To to use the form generator you need this command:
+To use the form generator you need this command:
 
   rails generate refinery:form form_name (attribute:attribut_type)*x --extension extension_name --namespace namespace_name
 
-If you want to see some information. just invoke +rails generate refinery:form+.
+If you want to see some information. just invoke
+  rails generate refinery:form
 
 === generated form
 
-If you created your first form, you will maybe surprised, because the labels are +f.required_label+s and not +f.label+s.
-A +f.required_label+ means, that in front of the label a +*+ will be shown, so the visitor knows, he has to fill in the field.
+If you created your first form, you will maybe surprised, because the labels are +f.required_label+ s and not +f.label+ s.
+A +f.required_label+ means, that in front of the label a + * + will be shown, so the visitor knows, he has to fill in the field.
 
 == controller update
 
