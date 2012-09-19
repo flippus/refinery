@@ -13,7 +13,7 @@
         <%= f.text_field :name, :class => 'larger widest' -%>
       </div>
 
-      <%= f.hidden_field(:location_selection, :value => 0) %>
+      <%= f.hidden_field(:location_selection, :value => 0, :id => "location_selection") %>
 
       <div id='location_select' class='field'>
         <%= f.label :location_id -%>
