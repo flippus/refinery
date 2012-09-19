@@ -109,7 +109,7 @@ If you want to see some information. just invoke
 === generated form
 
 If you created your first form, you will maybe surprised, because the labels are +f.required_label+ s and not +f.label+ s.
-A +f.required_label+ means, that in front of the label a + * + will be shown, so the visitor knows, he has to fill in the field.
+A +f.required_label+ means, that in front of the label a * will be shown, so the visitor knows, he has to fill in the field.
 
 == controller update
 
