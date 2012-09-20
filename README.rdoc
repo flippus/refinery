@@ -123,6 +123,41 @@ There's a method +find_all_objects+, in my case +find_all_events+.
     @events = Event.order("date DESC")
   end
 
+I advise to change the +show+ method to the following, so you have a redirecting to the index path of the event, if the id does not exist.
+
+ def show
+
+   begin
+    @event = Event.find(params[:id])
+   rescue ActiveRecord::RecordNotFound
+    flash[:error] = "Event konnte nicht gefunden werden"
+    redirect_to refinery.calendar_events_path
+   end
+
+   present(@page)
+ end
+
+=== add a frontend view
+
+To add a frontend view you have to change the +config/routes.rb+, add the +view+ and add the controller method.
+
+The controller methods for new and create are similar to rails and look like my following methods:
+
+ def new
+   @event = Event.new
+ end
+
+ def create
+   @event = Event.new(params[:event])
+
+   if @event.save
+     flash[:notice] = "Event wurde erfolgreich angelegt"
+     redirect_to refinery.calendar_events_path
+   else
+     render :action => 'new'
+   end
+ end
+
 === admin controller
 
 In your admin controller it's the same, but here you can disable the manuell sorting, too.
@@ -132,6 +167,32 @@ This line determine the order type of the objects.
 
 This line determine, if you can manually change the position of a object.
   :sortable => false
+
+=== add an admin view
+
+If you want to add/edit views, then you have to edit the crudify only, if you want to change something in create, update or destroy.
+But if you want to add a show view e.g., you can add as in rails a show method and write in the code.
+
+But don't forget, there's a +find_object+ method in every controller, which you maybe have to override.
+
+The standart method in my event admin controller is the following, e.g.:
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
+
+I advise to change the +find_event+ method to the following, so you have a redirecting to the index path of the event, if the id does not exist.
+
+  def find_event
+    begin
+      @event = Event.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:error] = "Event konnte nicht gefunden werden"
+      redirect_to refinery.calendar_admin_events_path
+    end
+  end
+
+At least, if you want to add a admin view, you have to change the +config/routes.rb+, add the +view+ and add/change the controller method.
 
 == Create a gem from your plugin
 
