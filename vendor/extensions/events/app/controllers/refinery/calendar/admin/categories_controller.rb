@@ -15,7 +15,7 @@ module Refinery
           begin
             @category = Category.find(params[:id])
           rescue ActiveRecord::RecordNotFound
-            flash[:error] = "Category konnte nicht gefunden werden"
+            flash[:error] = "Kategorie konnte nicht gefunden werden"
             redirect_to refinery.calendar_admin_categories_path
           end
         end
