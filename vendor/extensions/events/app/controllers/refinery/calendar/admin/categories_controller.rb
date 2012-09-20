@@ -3,8 +3,6 @@ module Refinery
     module Admin
       class CategoriesController < ::Refinery::AdminController
 
-        skip_before_filter :find_category, :only => :show
-
         crudify :'refinery/calendar/category',
                 :title_attribute => 'name',
                 :xhr_paging => true
