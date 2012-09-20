@@ -20,7 +20,6 @@ en:
             no_items_yet: There are no Categories yet. Click "Add New Category" to
               add your first category.
           category:
-            view_live_html: View this category live <br/><em>(opens in a new window)</em>
             edit: Edit this category
             delete: Remove this category forever
         locations:
@@ -34,7 +33,6 @@ en:
             no_items_yet: There are no Locations yet. Click "Add New Location" to
               add your first location.
           location:
-            view_live_html: View this location live <br/><em>(opens in a new window)</em>
             edit: Edit this location
             delete: Remove this location forever
         events:
@@ -48,7 +46,7 @@ en:
             no_items_yet: There are no Events yet. Click "Add New Event" to add your
               first event.
           event:
-            view_live_html: View this event live <br/><em>(opens in a new window)</em>
+            view_live_html: View this event
             edit: Edit this event
             delete: Remove this event forever
       categories:
