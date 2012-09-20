@@ -3,7 +3,6 @@ module Refinery
     module Admin
       class EventsController < ::Refinery::AdminController
 
-
         crudify :'refinery/calendar/event',
                 :title_attribute => 'name',
                 :xhr_paging => true,
@@ -11,6 +10,12 @@ module Refinery
                 :sortable => false
 
         def show
+          @event
+        end
+
+        private
+
+        def find_event
           begin
             @event = Event.find(params[:id])
           rescue ActiveRecord::RecordNotFound
