@@ -59,7 +59,7 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
-    refinerycms-events (1.0)
+    refinerycms-events (1.0b)
       acts_as_indexed (~> 0.7)
       refinerycms-core (~> 2.1.0.dev)
 
