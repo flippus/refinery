@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-events'
-  s.author            = 'flp'
+  s.author            = 'Philipp Neugebauer'
   s.version           = '1.0b'
   s.description       = 'Ruby on Rails Events extension for Refinery CMS'
   s.date              = '2012-09-18'

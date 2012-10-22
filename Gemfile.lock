@@ -60,8 +60,7 @@ PATH
   remote: vendor/extensions
   specs:
     refinerycms-events (1.0b)
-      acts_as_indexed (~> 0.7)
-      refinerycms-core (~> 2.1.0.dev)
+      refinerycms-core (>= 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -213,7 +212,7 @@ DEPENDENCIES
   jquery-rails (~> 2.0.0)
   rails (= 3.2.8)
   refinerycms!
-  refinerycms-events!
+  refinerycms-events (~> 1.0b)!
   refinerycms-i18n (~> 2.1.0.dev)!
   sass-rails (~> 3.2.3)
   sqlite3
