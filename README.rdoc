@@ -12,13 +12,13 @@ If you want to create a model without frontend, then add +--skip-frontend+.
 
 === Example:
 
-I want to create a engine with the name +event+ with the following attributes known from rails and the namespace calendar.
+I want to create an engine called +event+ with the following attributes known from rails and the namespace calendar.
 
   $> rails generate refinery:engine event name:string room:string date:datetime host_name:string host_email:string contact_email:string comment:text admission:decimal link:string published:boolean --namespace calendar
 
 == Create more models
 
-If you need some more models, you use the generate command some more times.
+If you need another models, you have to use the generate command again.
 But now you have to change the command a little bit, so that you have the following new command:
 
   $> rails generate refinery:engine singular_model_name (attribute:attribut_type)*x --extension plural_name_of_your_first_model --namespace your_plugin_namespace_name
@@ -31,23 +31,23 @@ I want to create a location model for my events engine.
 
   $> rails generate refinery:engine location name:string --extension events --namespace calendar
 
-Next model i want to create is the category model for my engine and you see, it's the same as the location model creation.
+I want to create now a category model for my engine. As you will see, it's the same as the location model creation.
 
   $> rails generate refinery:engine category name:string --extension events --namespace calendar
 
-There is also a {official guide}[http://refinerycms.com/guides/multiple-resources-in-an-extension] for this topic.
+There is also an other {official guide}[http://refinerycms.com/guides/multiple-resources-in-an-extension] for this topic.
 
 == revise your models/views
 
-And now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many and belongs_to and so on.
+Now you can change the models/views as you want. You can use the most things as in rails, e.g. the relationships has_many, belongs_to and so on.
 
 But pay attention to the refinery way, not the rails way.
 
-I give you a example:
+Example:
 
-We have a event model and a location model.
-A location can have many events, but a event belongs to a location.
-Now you see the differences between rails and refinery code:
+We have an event model and a location model.
+A location can have many events, but an event belongs to a location.
+Here you see the differences between rails and refinery code:
 
 === Rails
 
@@ -71,9 +71,9 @@ As you can see, you have to use always the refinery model!!
 
 == Use a own javascript file
 
-The easiest way to include a own javascript file to views is to add the following code to these views.
+The easiest way to include an own javascript file to views is to add the following code to these views.
 You needn't to add js at the end of the file, this happens automatically.
-But the js file have to be located in +your_app_directory/app/assets/javascripts+.
+But the js file has to be located in +your_app_directory/app/assets/javascripts+.
 
   <% content_for :javascripts do %>
     <%= javascript_include_tag 'javascript_file_name' %>
@@ -86,7 +86,7 @@ If you want to add a js file only for the backend of your app, you can also regi
 
   config.register_javascript "your_app_name"
 
-The js file have to be located in +your_app_directory/app/assets/javascripts+ and has to be named as +your_app_name.js+.
+The js file has to be located in +your_app_directory/app/assets/javascripts+ and has to called +your_app_name.js+.
 
 === Example:
 
@@ -98,17 +98,17 @@ My js file is located in +events/app/assets/javascripts+ and it's name is +event
 
 == Form generator
 
-In addition to the engine generator there's also a form generator. So can create easy additional forms to your extension.
+In addition to the engine generator there's also a form generator. So can create easily additional forms to your extension.
 To use the form generator you need this command:
 
   rails generate refinery:form form_name (attribute:attribut_type)*x --extension extension_name --namespace namespace_name
 
-If you want to see some information. just invoke
+If you want to see some information, just invoke
   rails generate refinery:form
 
 === generated form
 
-If you created your first form, you will maybe surprised, because the labels are +f.required_label+ s and not +f.label+ s.
+If you created your first form, you will be surprised maybe, because the labels are +f.required_label+ s and not +f.label+ s.
 A +f.required_label+ means, that in front of the label a * will be shown, so the visitor knows, he has to fill in the field.
 
 == controller update
@@ -123,7 +123,7 @@ There's a method +find_all_objects+, in my case +find_all_events+.
     @events = Event.order("date DESC")
   end
 
-I advise to change the +show+ method to the following, so you have a redirecting to the index path of the event, if the id does not exist.
+I advise to change the +show+ method to the following, so you have a redirecting to the index path of the event, if the id doesn't exist.
 
  def show
 
@@ -160,7 +160,7 @@ The controller methods for new and create are similar to rails and look like my 
 
 === admin controller
 
-In your admin controller it's the same, but here you can disable the manuell sorting, too.
+It's the same in your admin controller, but you can disable there the manual sorting.
 
 This line determine the order type of the objects.
   :order => "date DESC"
@@ -173,7 +173,7 @@ This line determine, if you can manually change the position of a object.
 If you want to add/edit views, then you have to edit the crudify only, if you want to change something in create, update or destroy.
 But if you want to add a show view e.g., you can add as in rails a show method and write in the code.
 
-But don't forget, there's a +find_object+ method in every controller, which you maybe have to override.
+But don't forget, there's a +find_object+ method in every controller, which you have to override maybe.
 
 The standart method in my event admin controller is the following, e.g.:
 
