@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/flippus/refinerycms_events2.0.git
+  revision: 25401b82a8a5ebd2f3ac6310b4639143eb2912f7
+  specs:
+    refinerycms-events (1.0b)
+      refinerycms-core (>= 2.0)
+
+GIT
   remote: git://github.com/parndt/refinerycms-i18n.git
   revision: 2a6d35554421d4e0a2ebeba6eb291bcd0ade9291
   specs:
@@ -56,12 +63,6 @@ GIT
       rack-cache (>= 0.5.3)
       refinerycms-core (= 2.1.0.dev)
 
-PATH
-  remote: vendor/extensions
-  specs:
-    refinerycms-events (1.0b)
-      refinerycms-core (>= 2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,6 +98,7 @@ GEM
     awesome_nested_set (2.1.3)
       activerecord (>= 3.0.0)
     babosa (0.3.8)
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.0)
     coffee-rails (3.2.2)
@@ -179,6 +181,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     sqlite3 (1.3.6-x86-mingw32)
     thor (0.16.0)
     tilt (1.3.3)

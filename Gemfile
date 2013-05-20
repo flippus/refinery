@@ -48,4 +48,4 @@ gem 'refinerycms-i18n', '~> 2.1.0.dev', :git => 'git://github.com/parndt/refiner
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 
-gem 'refinerycms-events', '~> 1.0b', :path => 'vendor/extensions'
+gem 'refinerycms-events', '~> 1.0b', :git => 'git://github.com/flippus/refinerycms_events2.0.git'
